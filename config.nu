@@ -38,6 +38,8 @@ $env.config.show_banner = false
 alias z = __zoxide_z
 alias zi = __zoxide_zi
 
+alias cd = __zoxide_z
+
 # @profile
 alias ep = config nu 
 
@@ -53,8 +55,12 @@ alias rmrf = rm -rf
 
 # @git
 alias g = git
+alias ga = git add
+alias gc = git commit
+alias gcm = git commit -m
 alias gs = git status
 alias gm = git merge
+alias gp = git push
 
 # @jumps
 alias h = cd ~/
