@@ -41,7 +41,7 @@ alias zi = __zoxide_zi
 alias cd = __zoxide_z
 
 # @profile
-alias ep = config nu 
+alias ep = config nu
 
 # @neovim
 alias nv = nvim
@@ -68,9 +68,22 @@ alias pp = cd ~/Projects
 
 # @python
 alias va = .venv/Scripts/activate
+alias uvr = uv run
+alias uvi = uv init
+alias uva = uv add
+
+# @winget
+alias wi = winget install
+alias wr = winget uninstall
+alias wl = winget list
+alias wu = winget upgrade
 
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
 
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+def gcomp [name] {
+	g++ $"($name).cpp" -o $"($name)"
+}
+
+# mkdir ($nu.data-dir | path join "vendor/autoload")
+# starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
