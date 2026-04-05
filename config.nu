@@ -39,6 +39,7 @@ alias z = __zoxide_z
 alias zi = __zoxide_zi
 
 alias cd = __zoxide_z
+alias cdi = __zoxide_zi
 
 # @profile
 alias ep = config nu
@@ -69,6 +70,7 @@ alias pp = cd ~/Projects
 # @python
 alias va = .venv/Scripts/activate
 alias uvr = uv run
+alias uvrp = uv run python
 alias uvi = uv init
 alias uva = uv add
 
@@ -78,11 +80,18 @@ alias wr = winget uninstall
 alias wl = winget list
 alias wu = winget upgrade
 
+# @explorer
+alias e = explorer.exe
+
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
 
 def gcomp [name] {
-	g++ $"($name).cpp" -o $"($name)"
+	g++ -std=c++23 $"($name).cpp" -o $"($name)"
+}
+
+def grun [name] {
+	g++ -std=c++23 $"($name).cpp" -o $"($name)"; exec $"($name).exe"
 }
 
 # mkdir ($nu.data-dir | path join "vendor/autoload")
