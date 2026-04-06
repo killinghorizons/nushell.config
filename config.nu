@@ -83,6 +83,12 @@ alias wu = winget upgrade
 # @explorer
 alias e = explorer.exe
 
+# @zellij
+alias zellinuke = zellij delete-all-sessions --force
+
+# @alacrity
+alias alconf = nvim ~/AppData/Roaming/alacritty/alacritty.toml
+
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
 
@@ -94,5 +100,9 @@ def grun [name] {
 	g++ -std=c++23 $"($name).cpp" -o $"($name)"; exec $"($name).exe"
 }
 
+
+# if (not ("ZELLIJ" in $env)) and ($env.TERM_PROGRAM? != "vscode") {
+    # zellij options --default-shell nu
+# }
 # mkdir ($nu.data-dir | path join "vendor/autoload")
 # starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
