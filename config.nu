@@ -89,6 +89,9 @@ alias zellinuke = zellij delete-all-sessions --force
 # @alacrity
 alias alconf = nvim ~/AppData/Roaming/alacritty/alacritty.toml
 
+# @cat
+alias cat = bat
+
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
 
