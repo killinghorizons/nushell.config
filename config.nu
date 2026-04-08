@@ -54,6 +54,7 @@ alias cpr = cp -r
 alias rmr = rm -r
 alias rmrf = rm -rf
 
+
 # @git
 alias g = git
 alias ga = git add
@@ -92,8 +93,13 @@ alias alconf = nvim ~/AppData/Roaming/alacritty/alacritty.toml
 # @cat
 alias cat = bat
 
+# @vscode
+alias vsconfig = nvim ~/AppData/Roaming/Code/User/settings.json
+
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
+
+def lsg [] { ls | sort-by type name -i | grid -c }
 
 def gcomp [name] {
 	g++ -std=c++23 $"($name).cpp" -o $"($name)"
