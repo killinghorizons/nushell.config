@@ -85,6 +85,7 @@ alias wu = winget upgrade
 alias e = explorer.exe
 
 # @zellij
+alias zel = zellij
 alias zellinuke = zellij delete-all-sessions --force
 
 # @alacrity
@@ -96,10 +97,16 @@ alias cat = bat
 # @vscode
 alias vsconfig = nvim ~/AppData/Roaming/Code/User/settings.json
 
+# god
+alias shutn = shutdown /s /t 0
+alias reboot = shutdown /r /t 0
+alias logout = shutdown /l /t 0
+
 def lsd [] { ls | where type == dir }
 def lsf [] { ls | where type == file }
 
 def lsg [] { ls | sort-by type name -i | grid -c }
+
 
 def gcomp [name] {
 	g++ -std=c++23 $"($name).cpp" -o $"($name)"
