@@ -2,7 +2,7 @@ $env.PROMPT_COMMAND = { ||
     let dir = ($env.PWD | str replace $env.USERPROFILE "~")
     let reset = (ansi reset)
 
-    $"(ansi red_bold)[($dir)] (ansi blue_bold)λ "
+    $"(ansi {fg: '#ff00ff' attr: 'b'})[($dir)] λ "
 }
 $env.PROMPT_COMMAND_RIGHT = ""
 $env.PROMPT_INDICATOR = ""
